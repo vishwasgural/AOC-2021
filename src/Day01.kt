@@ -1,12 +1,19 @@
 fun main() {
     val input = readInput("Day01")
-    var largerMeasurement : Int = 0
-    var previousNumber = input[0].toInt()
-    for (i in input){
+    var largerMeasurement = 0
+    var firstNumber = input[0].toInt()
+    var secondNumber = input[1].toInt()
+    var thirdNumber = input[2].toInt()
+    var firstSum: Int = firstNumber + secondNumber + thirdNumber
+    for (i in input) {
         val number = i.toInt()
-        if(previousNumber<number)
+        val secondSum = number + secondNumber + thirdNumber
+        if (firstSum < secondSum)
             largerMeasurement++
-        previousNumber=number
+        firstNumber = secondNumber
+        secondNumber = thirdNumber
+        thirdNumber = number
+        firstSum = firstNumber + secondNumber + thirdNumber
     }
     println(largerMeasurement)
 }
