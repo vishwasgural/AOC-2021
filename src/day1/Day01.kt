@@ -1,5 +1,9 @@
+package day1
+
+import readInput
+
 fun main() {
-    val input = readInput("Day01")
+    val input = readInput("day1/Day01")
     var largerMeasurement = 0
     var firstNumber = input[0].toInt()
     var secondNumber = input[1].toInt()
